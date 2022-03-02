@@ -8,11 +8,11 @@ const dbConnection = async () => {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         } )
-        const Cat = mongoose.model('Cat', { name: String });
-
-        /*const kitty = new Cat({ name: 'Zildjian' });
+        /*const Cat = mongoose.model('Cat', { name: String });
+        const kitty = new Cat({ name: 'Zildjian' });
         kitty.save().then(() => console.log('meow'));
-        console.log('Base de datos conectada');*/
+        */
+        console.log('Base de datos conectada');
     } catch (error) {
         console.log(error);
         throw new Error('Error a la hora de iniciar la base de datos')   
