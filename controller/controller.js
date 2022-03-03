@@ -4,9 +4,19 @@ const vistaUno = (req, res)=>{
     res.render('index', { title: 'Express' });
 }
 
-const vistaUsuario = async (req, res)=>{
+
+const vistaGatitos = async (req, res) =>{
     try {
-       
+        const gatitos = await Cat.find()
+        res.json({gatitos})
+    } catch (error) {
+        
+    }
+}
+
+const crearGatito = async (req, res)=>{
+    try {
+        
         const kitty = new Cat({ name: 'Michi' });
         await kitty.save()
         console.log('meow')
@@ -18,4 +28,4 @@ const vistaUsuario = async (req, res)=>{
     
 }
 
-module.exports = {vistaUno, vistaUsuario}
+module.exports = {vistaUno, crearGatito, vistaGatitos}
