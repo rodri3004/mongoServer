@@ -10,7 +10,7 @@ const vistaGatitos = async (req, res) =>{
 }
 
 const crearGatito = async (req, res)=>{
-    const kitty = new Cat({ name: 'Michi' });
+    const kitty = new Cat({ name: req.params.name });
     await kitty.save()
     console.log('meow')
     res.json({msg: 'meow'})
