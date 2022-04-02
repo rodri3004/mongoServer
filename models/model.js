@@ -2,12 +2,28 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 const storeSchema = new Schema({
-    name: {
+    marca: {
         type: String,
-        required: true,
+        required: [true,"La marca es requerida" ],
+    },
+    modelo: {
+        type: String,
+        required: [true,"El modelo es requerido" ],
         unique: true,
     },
+    memoria: {
+        type: String,
+        required: true,
+    },
+    resolucionCamara: {
+        type: String,
+        required: true,
+    },
+    precio: {
+        type: String,
+        required: [true,"El precio es requerido" ],
+    },
 });
-const Cat = mongoose.model('Cat', storeSchema);
+const Celular = mongoose.model('Celular', storeSchema);
 
-module.exports = {Cat}
+module.exports = {Celular}

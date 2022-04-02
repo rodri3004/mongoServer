@@ -4,7 +4,7 @@ require('dotenv').config();
 
 const dbConnection = async () => {
     try {  
-        await mongoose.connect( process.env.MONGO_CNN,{
+        await mongoose.connect( "mongodb+srv://rodri3004:milanga@clusterrodrigo.drwny.mongodb.net/test",{
             useNewUrlParser: true,
             useUnifiedTopology: true,
         } )
